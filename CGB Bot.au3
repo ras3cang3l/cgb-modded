@@ -217,14 +217,14 @@ Func Idle() ;Sequence that runs until Full Army
 			    checkMainScreen(False)
 		EndIf
 		if $CommandStop <> 0 then
-			while (not $fullArmy) and ($CurCamp >= ($TotalCamp * 90/100))		
-				If _Sleep(5000) Then ExitLoop	
+			while (not $fullArmy) and ($CurCamp >= ($TotalCamp * 90/100))
+				If _Sleep(5000) Then ExitLoop
 				Train()
 				If $Restart = True Then ExitLoop
-				checkMainScreen(False)			
+				checkMainScreen(False)
 			wend
 		endif
-		
+
 		If $CommandStop = 0 And $fullArmy Then
 			SetLog("Army Camp and Barracks are full, stop Training...", $COLOR_ORANGE)
 			$CommandStop = 3
